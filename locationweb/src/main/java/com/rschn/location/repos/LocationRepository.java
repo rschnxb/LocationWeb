@@ -9,6 +9,6 @@ import com.rschn.location.entities.Location;
 
 public interface LocationRepository extends JpaRepository<Location, Integer> {
 
-	@Query("select type, count(type) from location group by type")
+	@Query(value="select type, count(type) from location group by type",nativeQuery=true)
 	public List<Object[]> findTypeAndTypeCount();
 }

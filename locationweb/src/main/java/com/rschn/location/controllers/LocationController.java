@@ -40,7 +40,7 @@ public class LocationController {
 		Location locationSaved = service.saveLocation(location);
 		String msg = "Location saved with id: " + locationSaved.getId();
 		modelMap.addAttribute("msg", msg);
-		emailUtil.sendEmail("bringmetochina@gmail.com", "Location Saved", "Location Saved Successfully and about to return a response");
+		//emailUtil.sendEmail("bringmetochina@gmail.com", "Location Saved", "Location Saved Successfully and about to return a response");
 		return "createLocation";
 	}
 	
@@ -84,7 +84,7 @@ public class LocationController {
 		List<Object[]> data = repository.findTypeAndTypeCount();
 		reportUtil.generatePieSChart(path, data);
 		return "report";
-	}
+}
 
 
 }
